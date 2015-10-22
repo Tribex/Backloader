@@ -11,14 +11,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r"
+   inkscape:version="0.91 r13725"
    width="160"
    height="160"
    viewBox="0 0 160 160"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="/home/joshua/Programming/BackLoader/img/icon.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="/home/tribex/Programming/Backloader/src/img/icon-38.png"
+   inkscape:export-xdpi="21.375"
+   inkscape:export-ydpi="21.375">
   <metadata
      id="metadata8">
     <rdf:RDF>
@@ -27,7 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,14 +43,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1366"
-     inkscape:window-height="708"
+     inkscape:window-height="742"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="4.17193"
-     inkscape:cx="94.821085"
-     inkscape:cy="95.593684"
+     inkscape:zoom="2.95"
+     inkscape:cx="44.968311"
+     inkscape:cy="84.057678"
      inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path

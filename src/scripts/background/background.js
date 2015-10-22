@@ -28,10 +28,10 @@ function prepareExtension(callback) {
 }
 
 // Listen for updates to local storage
-browser.storage.onChanged.addListener(updateEnabled);
+browser.storage.onChanged.addListener(updateStorageData);
 
 // Update backloader.enabled when it get's changed in local storage
-function updateEnabled(changes, namespace) {
+function updateStorageData(changes, namespace) {
 	for (var key in changes) {
 		var change = changes[key];
 		// Only do something if it's 'enabled' that gets updated
@@ -39,6 +39,7 @@ function updateEnabled(changes, namespace) {
 			if(key == 'enabled') {
 				backloader.enabled = change.newValue;
 				console.log('Updated local-storage-enable-status from ' + change.oldValue + ' to ' + change.newValue);
+				setEnabledIcon(backloader.enabled);
 
 			} else if(key == 'filter-list') {
 				loadFilterList(function(list) {
@@ -177,10 +178,24 @@ function loadFilterList(cb) {
 function loadEnabled(cb) {
 	// Arg 1: ['enabled'] Regressed to null for Firefox Support
 	browser.storage.local.get(null, function(storageResults) {
+		setEnabledIcon(storageResults['enabled']);
 		cb ? cb(storageResults['enabled']) : null;
 	});
 }
 
+/**
+ * Changes the status icon based on whether or not the extension is enabled.
+ * @param {Boolean} enabledStatus True if the extension is enabled, false if not.
+ * @returns {void}
+ */
+function setEnabledIcon(isEnabled) {
+	chrome.browserAction.setIcon({
+  	path: {
+			'19': isEnabled ? 'img/icon-19.png' : 'img/icon-disabled-19.png',
+			'38': isEnabled ? 'img/icon-38.png' : 'img/icon-disabled-38.png',
+		}
+	});
+}
 
 /**
 * Tells if the parameters source and target match, including wildcards
